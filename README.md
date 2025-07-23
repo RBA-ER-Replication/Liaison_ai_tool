@@ -4,10 +4,18 @@
 
 ## Description
 
-This `README` file contains general instructions on how to replicate the tools and results presented in RDP 2025-XX. The code and data are structured for two main uses:
+This `README` file contains general instructions on how to replicate the tools and results presented in RDP 2025-06. The code and data are structured for two main uses:
 
 1. To replicate the creation of a business liaison textual analysis and retrieval system (TARS), using artificial data as a placeholder to preserve the confidential nature of unaggregated liaison textual information.
 2. To support replication of the paper’s findings, including the construction of text-based indicators and their application in nowcasting exercises.
+
+## License
+This repository contains both code and data, each under different licenses:
+
+- **Code**: Licensed under the BSD 3-Clause License. 
+- **All datasets in the `Data` subfolder**: Licensed under Creative Commons Attribution 4.0 International (CC-BY-4.0)
+
+Please refer to the respective license files for full details.
 
 ## Coding Languages
 
@@ -29,6 +37,7 @@ Questions, comments and bug reports can be sent to `windsorc` and `grayn` at dom
 
 ## Folder Contents
 - `README` is this read me file.
+- `LICENSE` contains the license agreement that covers all code in this repo (Data subfolder is covered by separate agreement).
 - `Data` is a folder that contains all input data files used across each of the folders.
 - `backend` is a folder containing code for replicating a data extraction process like the tool described in the paper.
 - `frontend` is a folder containing code to create a dashboard like the tool described in the paper.
@@ -40,7 +49,8 @@ Questions, comments and bug reports can be sent to `windsorc` and `grayn` at dom
 
 This subfolder contains the data that is used by default in each of the other subfolders of the repo. All the data for demonstrating how to build and use a tool like that described in the paper has been artificially generated. As a result, using this data for replication will look different to results shown in the paper. This is to ensure the confidential nature of liaison discussions is maintained, while allowing for exploration of a tool that would use this confidential information within the RBA. The data for running the nowcasting exercise is real aggregate data and is similar to what was used in the results in the paper.
 
-- `rdp-2025-XX-graph-data.xlsx` provides the data used to plot figures in the main paper in an excel format.
+- `LICENSE-data.md` contains the license agreement that covers all data in this subfolder (code outside this folder is covered by separate agreement).
+- `rdp-2025-06-graph-data.xlsx` provides the data used to plot figures in the main paper in an excel format.
 - `Example Liaison Summary Note.docx`: A Word document that provides input for the extraction step in the `backend` code. This document is artificially generated and does not contain any confidential information about real firms.
 - `Example_liaison_data.csv`: Provides input for the extraction step in the `backend` code. This data is artificially generated and does not contain any confidential information about real firms.
 - `nowcasting_df.xlsx`: Provides aggregated time series data for nowcasting growth in the wage price index (WPI). This is the same liaison data as the results in the paper, except for the gap measures that use confidential model estimates of the NAIRU and NAIRLU. Instead, piecewise representations of NAIRU and NAIRLU are provided that broadly reflect the real model estimates used in the paper.
@@ -101,7 +111,8 @@ This subfolder contains code for the empirical nowcasting exercise using the sam
 ```
 Repo
 ├── Data
-│   ├── rdp-2025-XX-graph-data.xlsx (graph data to plot figures in paper)
+│   ├── LICENSE-data.md (License agreement for data in this subfolder)
+│   ├── rdp-2025-06-graph-data.xlsx (graph data to plot figures in paper)
 │   ├── Example Liaison Summary Note.docx (input into Extraction step in backend)
 │   ├── Example_liaison_data.csv (input into Enrichment step in backend)
 │   ├── nowcasting_df.xlsx (real aggregated time series data for nowcasting WPI growth)
@@ -115,7 +126,6 @@ Repo
 │   ├── TARSml.py (contains NLP model files used to enrich the text)
 │   ├── TARSutils.py (contains utility functions for extracting, cleaning and enriching text)
 │   └── enviroment.yml (file for building working python environment to run code)
-
 ├── frontend
 │   ├── frontend.Rproj (R project file to ensure working in correct directory)
 │   ├── requirements.txt (contains package versions required for replication in R)
@@ -140,6 +150,8 @@ Repo
 │   ├── Plot_measures.R (script to plot figures from paper)
 │   └── data_gen_utils.R (contains utility functions for generating textual indices)    
 └── nowcasting
+    ├── nowcasting.Rproj (R project file to ensure working in correct directory)
+    ├── requirements.txt (contains package versions required for replication)
     ├── fit_predict.R (main script for running nowcasting exercise)
     ├── Functions.R (utility functions for running and assessing nowcasting)
     └── analysis.R (assessing nowcasting performance and plot results) 

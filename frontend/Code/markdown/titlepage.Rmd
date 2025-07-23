@@ -1,0 +1,61 @@
+---
+title: "Liaison Dashboard Title Page"
+author: "Nicholas Gray"
+date: "24/01/2024"
+output: html_document
+---
+
+<br>
+
+<div class="container-fluid">
+  <div class="row">
+    
+  <div class="col-md-10 col-md-offset-1">
+    <div class="alert alert-success">
+    <p style="font-size:18pt"><strong>Quick Start:</strong></p>
+      <p style="font-size:18pt">Click to <code>Search</code> tab in the top nav-bar, set your filter parameters in the left side panel and click <code>Update Data</code>. To see the extracted liaison notes data based on set filters, click on either <em>Raw Data by Paragraph</em> or <em>Raw Data by Liaison</em> tab to view data. 
+      <br>
+      <br>
+      <strong>Note: the Update Data button will need to be clicked each time to refresh data with new filters.</strong></p>
+    </div>
+  </div>
+
+  </div>
+</div>
+
+<br>
+
+# **Understanding the Dashboard**
+
+<p style="font-size:16pt; font-color: #62bcb6"> 
+This dashboard allows users to extract insights from the summary notes of liaison meetings as well as high-level summary statistics from the liaison program. The text information is indexed at a paragraph level allowing users to filter and aggregate information based on the ideas being discussed in each paragraph independently. 
+</p>
+
+<br>
+
+<p style="font-size:16pt; font-color: #62bcb6"> 
+<strong>Note:</strong> The default textual data in this dashboard has been generated using ChatGPT to broadly reflect the type of textual information that is found in business liaison notes written by RBA staff. However, given this data is artificial in nature, the output will not exactly reflect measures described in the paper. All company names and numbers are fake and randomly assigned to the text.</p> 
+
+<br>
+
+<p style="font-size:16pt; font-color: #62bcb6"> 
+For more information on operating this dashboard tool, see information on other tabs. To understand how these capabilities are used in practice, refer to Reserve Bank of Australia research discussion paper <a href="https://arxiv.org/pdf/2506.18505">An AI-powered Tool for Central Bank Business Liaisons: Quantitative Indicators and On-demand Insights from Firms</a>.</p> 
+
+
+<br>
+<p style="font-size:20pt; font-color: #62bcb6">Abstract of Paper</p>
+
+<p style="font-size:16pt; font-color: #62bcb6"> 
+<em>In a world of increasing policy uncertainty, central banks are relying more on soft information sources to complement traditional economic statistics and model-based forecasts. One valuable source of soft information comes from intelligence gathered through central bank liaison programs – structured programs in which central bank staff regularly talk with firms to gather insights. This paper introduces a new text analytics and retrieval tool that efficiently processes, organises, and analyses liaison intelligence gathered from firms using modern natural language processing techniques. The textual dataset spans 25 years, integrates new information as soon as it becomes available, and covers a wide range of business sizes and industries.</em></p> 
+
+<br>
+
+<p style="font-size:16pt; font-color: #62bcb6"> 
+<em>The tool uses both traditional text analysis techniques and powerful language models to provide analysts and researchers with three key capabilities: (1) quickly querying the entire history of business liaison meeting notes; (2) zooming in on particular topics to examine their frequency (topic exposure) and analysing the associated tone and uncertainty of the discussion; and (3) extracting precise numerical values from the text, such as firms’ reported figures for wages and prices growth. </em></p> 
+
+<br>
+
+<p style="font-size:16pt; font-color: #62bcb6"> 
+<em>We demonstrate how these capabilities are useful for assessing economic conditions by generating text-based indicators of wages growth and incorporating them into a nowcasting model. We find that adding these text-based features to current best-in-class predictive models, combined with the use of machine learning methods designed to handle many predictors, significantly improves the performance of nowcasts for wages growth. Predictive gains are driven by a small number of features, indicating a sparse signal in contrast to other predictive problems in macroeconomics, where the signal is typically dense.</em></p> 
+
+<br>

@@ -1,0 +1,49 @@
+---
+title: "search"
+author: "Nicholas Gray"
+date: "2024-02-08"
+output: html_document
+---
+
+## **What is the Topic Builder?**
+
+<p style="font-size:16pt"> 
+The Topic Builder page of this dashboard allows users to develop a list of words with similar semantic meaning for enhanced word-based topic searching of liaison data. Starting by entering a single word in the search bar, the suggested words below it will be most similar words also used in the liaison summary notes. The model underlying these suggested words is the <a href="https://www.coveo.com/blog/word2vec-explained/">Word2Vec model</a> and has been trained specifically on the ChatGPT generated liaison data only. This model creates a vectorised representation of the liaison text known as an <em>embedding</em> which represents words numerically based on their semantic context. For example, the words <em>price</em>, <em>prices</em> and <em>pricing</em> will have a similar vector position in this word embedding, given they are on average used in similar contexts. </p>
+
+<br>
+
+<p style="font-size:16pt"> If multiple words have been selected, the resultant suggestions will be a <em>vector average</em> of all words selected. The following two examples show of how different words combined with <em>wages</em> affect the suggested words.</p>
+
+<br>
+
+<p align="center" style="font-size:18pt"><strong>Example 1:</strong>
+<p align="center">
+  <img src="wages_eba.png"/>
+</p>
+
+<br>
+
+<p align="center" style="font-size:18pt"><strong>Example 2:</strong>
+<p align="center">
+  <img src="wages_cost.png"/>
+</p>
+
+<br>
+
+<p style="font-size:16pt"> 
+If you need more context for a specific word of how it is used in liaison summary notes, use the search field <code>Examples in Liaisons</code> below the Topic Builder. This will give you a randomly order list of paragraphs that contain the word in question, to help give an idea of semantic meaning or meanings of the word in relation to liaisons. Note that whilst a word may have multiple contexts in which it is is used throughout the text, the word in the Word2Vec model can only have one semantic meaning (i.e. a single word embedding)</p>
+
+<br>
+
+<p style="font-size:16pt"> 
+Once you have built a list of words, the word list output can be copied into the Search text field, or even into R, to search the liaison database for your topic (based on the word list). Note: a large list of words can take some time to filter with in the dashboard, so for large lists, it's recommended to use an R-based script instead. 
+</p>
+
+<br>
+<p style="font-size:16pt"> 
+The existing underlying Word2Vec model has been trained on the ChatGPT generated artificial data. For retraining on a different semantic language base (such as other real liaison data), apply the <code>Code/Create_w2v_model.R</code> script to the relevant textual data. This will train a new model which can be used to replace the existing one used by the dashboard by replacing/overwriting the <code>Code/wv2.bin</code> model binary.
+</p>
+
+
+<br>
+<br>

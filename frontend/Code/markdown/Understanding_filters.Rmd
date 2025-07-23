@@ -1,0 +1,51 @@
+---
+title: "Understanding the filters"
+author: "Nicholas Gray"
+date: "2024-02-08"
+output: html_document
+---
+
+
+
+
+# **Understanding the Language Model Filters** 
+
+<p style="font-size:16pt">The following outlines each of the LM-based tags that enrich the underlying text, allowing for thematic searching of the full history of liaison data. The following will give you an understanding of how best to apply them to filter the data for each use case.   
+</p>
+
+<br>
+
+### **Category:** 
+<p style="font-size:16pt">
+The category tag is generated using a <a href="https://huggingface.co/tasks/zero-shot-classification">zero-shot classification</a> (ZSC) model. This model is a type of Language Model, similar to the one underlying ChatGPT, but with a different modelling objective (classifying rather than generating text). The model is “pre-trained” using a powerful modelling architecture on a massive text corpus that covers a range of genres of spoken and written text. This allows it to "understand" language. Then this model is fine-tuned on a human-labelled data source for the specific task text entailment. This results in a model model that can be used to classify any text into any arbitrary set of categories, as we do for the liaison paragraphs. 
+</p>
+
+<br>
+
+<p style="font-size:16pt">
+The topics we prompt the model to classify are relevant to business operations and and economis conditions. These categories were developed with subject matter experts from the liaison program and broadly reflect the core questions used in the program. The output from the model, for each paragraph, is a likelihood score/weight for each category. This represents the models predicted probability that the information in a paragraph is about that category (scored between 0 and 1, with 1 being absolutely certain).
+</p>
+
+<br>
+
+### **Industry:** 
+
+<p style="font-size:16pt">The industry tag is also generated using the ZSC model. The difference is these tags are used to extract what type of industry is being discussed in a paragraph. The industry tag is at the paragraph level and defined by the text, which means it will often be different from the companies primary industry of operation. For example, a company from the retail industry group could talk about transporting issues. The ZSC model would likely score this paragraph high for the transport industry tag instead of the retail tag.
+</p>
+
+<br>
+
+### **Filter Confidence:**
+
+<p style="font-size:16pt">
+Adjusting the confidence score/weight threshold produced by each model give you additional control over how the data is filtered. You can change the lower bound threshold weight for each of the language models by changing the <code>Confidence</code> value under the <code>Advanced Settings</code> in the sidebar. The larger the weight for a given label, the more confident the model is that the information in the paragraph relates to that label. For example, if you were selecting paragraphs tagged with the <em>wages</em> category, increasing the threshold from 0.9 to 0.95 would return fewer paragraphs, but those paragraphs would be more closely related to wages.</p>
+
+<br>
+
+<p style="font-size:16pt">
+Choosing a threshold is a non-trivial task and will require configuration based on the individuals use case and risk appetite. A thorough review of extracted paragraphs at different thresholds will also help configure the appropriate value for each use case.
+</p>
+
+<br>
+<br>
+

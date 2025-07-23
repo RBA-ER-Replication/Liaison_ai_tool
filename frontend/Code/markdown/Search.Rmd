@@ -1,0 +1,56 @@
+---
+title: "search"
+author: "Nicholas Gray"
+date: "2024-02-08"
+output: html_document
+---
+
+## **Search**
+
+<p style="font-size:16pt"> 
+The dashboard’s search page allows users to easily sift through the liaison database by setting specific parameters in the sidebar. You can filter the data using two types of data: liaison-level collected metadata (like date and state filters) and paragraph-level information extracted from text (like keyword searches and language model-based (LM) tags). </p>
+
+<br>
+
+<p style="font-size:16pt"> 
+For information on the the type of metadata and other information that the RBA collects and records from business liaison contacts, see <em>Section 2 - RBA’s Liaison Program</em> of the associated paper. For more information on the extracted text and the enrichment with LM-based tags that help filter, for example, by general topics spoken about in liaisons, see <em>Section 3 - Solution Architecture</em> of the associated paper. For further assistance with filtering the paragraphs based on these LM-based tags, refer to <em>Understanding the Filters</em> tab of this help page.</p>
+
+<br>
+
+<p style="font-size:16pt"> 
+There is also other paragraph level information extracted using language models not used for filtering. This is the text sentiment extracted using the <a href="https://huggingface.co/ProsusAI/finbert">FinBERT model</a> and numerical price outcomes extracted using the method outlined in <em>Section 4.4 - Extracting precise numerical quantities</em> of the associated paper.
+</p>
+<br>
+
+### **Page Outline**
+<p style="font-size:16pt"> 
+The filters can be selected using the left sidebar. Hovering over each filter option will give more information on what it does. Once required filters have been selected, clicking <code>Update Data</code> will initiate a search of the liaison database with the applied filters. This will update the plots and tables in the dashboard on the following sections:
+</p>
+
+<ul style="font-size:16pt; padding-left:80px">
+
+<li><u>Overview of Filtered Data</u> - At the top of the initial tab, are plots that summarise the number of paragraphs returned and the average sentiment of these paragraphs extracted based on current filters.</li>
+  
+<li><u>Individual Trend in Text Filters</u> - At the bottom of the initial tab, are aggregated plots of the trends in LM-based tags and word searches (if selected) over the full sample, ignoring all other filters applied. For example, if you are filtering on a keyword, it will show the word count over all paragraphs. Similarly, if you are filtering on a LM-based tag it shows the share of paragraphs with that tag above the threshold set in <code>Advanced Settings</code> in the side bar. This is equivalent to the topic exposure measures outlined in the paper.</li>
+  
+<li><u>Aggregated Data</u> - Aggregated table of extracted paragraphs, based on the period chosen using the <code>Aggregate Data By</code> selector in the sidebar. Columns in this table are intended to broadly reflect the measures systematically extracted in the associated paper (such as topic exposure and tone), these being:
+  <ul style="font-size:16pt">
+    
+  <li><em>Share_Paragraphs</em> is the ratio of extracted paragraphs to all paragraphs across a period. Only applying an keyword search or LM-based tags with no other filters is equivalent to a topic exposure measure as outlined in the paper.</li>
+    
+  <li><em>Mean_Sentiment</em> is the aggregated mean sentiment of all paragraphs selected with the current set of filters. Only applying an keyword search or LM-based tags with no other filters is equivalent to a topic-specific tone measure as outlined in the paper.</li>
+</ul>
+      
+<li><u>Raw Data by Paragraph</u> - Table that contains text and other columns from all the paragraphs extracted based on the filters applied. The table will show the base columns <em>(Contact date, Contact Company, sentiment, text, etc)</em> plus any tags applied as filters.</li>
+
+<li><u>Raw Data by Liaison</u> - This table has the same structure as the paragraph level one, except paragraphs have been aggregated by liaison, which concatenates the text to one row and takes mean of any numerical columns.</li>
+    
+<li><u>Price Extraction</u> - This tab shows the extracted prices from liaisons averaged across the selected period in both graphical and tabular form. The table can be downloaded as an excel file. Note: if using demo data, this is artifically generated using ChatGPT, as a result it will not reflect real aggregate measures of prices (e.g. CPI) like shown in paper.</li>
+</ul></li>
+
+<br>
+
+<p style="font-size:16pt"> Tables can be downloaded using the <code>Download to Excel</code> button at the top of the tab.</p>
+
+<br>
+<br>
